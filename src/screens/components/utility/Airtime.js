@@ -30,7 +30,7 @@ const Airtime = ({ navigation }) => {
                     <Logo />
                 <Text style={{color:COLORS.primary, fontWeight:'bold',fontSize:18}}> Molo Airtime Recharge </Text>
                 <Layout style={styles.inputBackground}>
-                <RNPickerSelect
+                {/* <RNPickerSelect
                     value ={network}
                     onValueChange={(value) => setNetwork(value)}
                     items={[
@@ -39,7 +39,7 @@ const Airtime = ({ navigation }) => {
                         { label: 'MTN', value: 'mtn' },
                         { label: 'GLO', value: 'glo' },
                     ]}
-                />
+                /> */}
                    </Layout> 
                 <Layout style={styles.inputBackground}>
                         <Input
@@ -49,7 +49,7 @@ const Airtime = ({ navigation }) => {
                           accessoryRight ={PhoneIcon}
                           keyboardType="numeric"
                           placeholder='Phone number eg. 08140324567' 
-                          onChangeText={nextValue => setAmount(nextValue)}
+                          onChangeText={nextValue => setPhone(nextValue)}
                           style ={{ width:'90%'}}
                       />
                    </Layout> 

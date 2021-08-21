@@ -9,18 +9,10 @@ import {
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import * as eva from '@eva-design/eva';
 import { COLORS , Logo, APIS} from '../../../constants/index';
-import { Mobiledata } from '.';
 
 const card = (props) => ( <Icon {...props} name='credit-card-outline'/>);
 const ActivityIcon = (props) => (<Icon {...props} name='activity-outline'/>); 
 const PhoneIcon         = (props) => (<Icon {...props} name='phone-outline'/>);
-
-const NetworkData =[
-  "airtel",
-  "9mobile",
-  "mtn",
-  "glo",
-];
 
 const Mobiledata = ({ navigation }) => {
     const [amount, setAmount]   = useState(0);
@@ -36,7 +28,7 @@ const Mobiledata = ({ navigation }) => {
                     <Logo />
                 <Text style={{color:COLORS.primary, fontWeight:'bold',fontSize:18}}> Molo Mobiledata Recharge </Text>
                 <Layout style={styles.inputBackground}>
-                <RNPickerSelect
+                {/* <RNPickerSelect
                     value ={network}
                     onValueChange={(value) => setNetwork(value)}
                     items={[
@@ -45,7 +37,7 @@ const Mobiledata = ({ navigation }) => {
                         { label: 'MTN', value: 'mtn' },
                         { label: 'GLO', value: 'glo' },
                     ]}
-                />
+                /> */}
                    </Layout> 
                 <Layout style={styles.inputBackground}>
                         <Input

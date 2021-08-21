@@ -46,8 +46,8 @@ import { StyleSheet, Text, View, Image } from 'react-native'
       <Image  source={ICONS.logo} style={{height:150,width:150, resizeMode: 'contain', marginVertical:10, aspectRatio:3/4}} />
 );
 
-const BASE_URL ="http://192.168.43.13:80/works/moloNet/api"; 
-const BASE_URL1  ="http://hack.vestcoin.org/api"; 
+const BASE_URL2 ="http://192.168.43.13:80/works/moloNet/api"; 
+const BASE_URL  ="http://hack.vestcoin.org/api"; 
 
  export const APIS ={
      AUTH:{
