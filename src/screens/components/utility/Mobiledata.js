@@ -37,7 +37,8 @@ const Mobiledata = ({ navigation }) => {
                 <Text style={{color:COLORS.primary, fontWeight:'bold',fontSize:18}}> Molo Mobiledata Recharge </Text>
                 <Layout style={styles.inputBackground}>
                 <RNPickerSelect
-                    onValueChange={(value) => console.log(value)}
+                    value ={network}
+                    onValueChange={(value) => setNetwork(value)}
                     items={[
                         { label: 'Airtel', value: 'airtel' },
                         { label: '9mobile', value: '9mobile' },
@@ -54,10 +55,10 @@ const Mobiledata = ({ navigation }) => {
                           accessoryRight ={PhoneIcon}
                           keyboardType="numeric"
                           placeholder='Phone number eg. 08140324567' 
-                          onChangeText={nextValue => setAmount(nextValue)}
+                          onChangeText={nextValue => setPhone(nextValue)}
                           style ={{ width:'90%'}}
                       />
-                   </Layout> 
+                </Layout> 
                 <Layout style={styles.inputBackground}>
                         <Input
                           value ={amount}
