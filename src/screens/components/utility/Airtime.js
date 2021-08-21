@@ -9,28 +9,17 @@ import {
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import * as eva from '@eva-design/eva';
 import { COLORS , Logo, APIS} from '../../../constants/index';
+import RNPickerSelect from 'react-native-picker-select';
+
 
 const card = (props) => ( <Icon {...props} name='credit-card-outline'/>);
 const ActivityIcon = (props) => (<Icon {...props} name='activity-outline'/>); 
 const PhoneIcon         = (props) => (<Icon {...props} name='phone-outline'/>);
 
-// array("airtel"=>1,"9mobile"=>2,"mtn"=>5,"glo"=>6);
-const NetworkData =[
-  "airtel",
-  "9mobile",
-  "mtn",
-  "glo",
-];
-
 const Airtime = ({ navigation }) => {
     const [amount, setAmount]   = useState(0);
     const [phone, setPhone]     = useState('');
-    const [network, setNetwork] = useState('');
-    const [selectedIndex, setSelectedIndex] = React.useState(new IndexPath(0));
-
-    const displayValue = NetworkData[selectedIndex.row];
-
-    const renderOption = (title) => (  <SelectItem title={title}/> );
+    const [network, setNetwork] = useState(''); 
 
     return (
         <>
@@ -41,15 +30,16 @@ const Airtime = ({ navigation }) => {
                     <Logo />
                 <Text style={{color:COLORS.primary, fontWeight:'bold',fontSize:18}}> Molo Airtime Recharge </Text>
                 <Layout style={styles.inputBackground}>
-                  <Select
-                      style={styles.select}
-                      placeholder='Select Network'
-                      value={displayValue}
-                      selectedIndex={selectedIndex}
-                      onSelect={index => setSelectedIndex(index)}>
-                      {NetworkData.map(renderOption)}
-                      accessoryRight ={ActivityIcon}
-                  </Select>
+                <RNPickerSelect
+                    value ={network}
+                    onValueChange={(value) => setNetwork(value)}
+                    items={[
+                        { label: 'Airtel', value: 'airtel' },
+                        { label: '9mobile', value: '9mobile' },
+                        { label: 'MTN', value: 'mtn' },
+                        { label: 'GLO', value: 'glo' },
+                    ]}
+                />
                    </Layout> 
                 <Layout style={styles.inputBackground}>
                         <Input
